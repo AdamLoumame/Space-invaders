@@ -3,24 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/ab3056bc7e.js"
-      crossorigin="anonymous"
-    ></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
+
     <title>Space Invaders</title>
   </head>
-  <body>
-    <div class="loader"><img src="./image_processing20210903-1371-1fg4j0s.gif" alt=""></div>
-    <button class="Restart">Restart
-      <span class="s1"></span>
-      <span class="s2"></span>
-      <span class="s3"></span>
-      <span class="s4"></span>
-    </button>
-    <h1>Space Invaders</h1>
-    <canvas class="canvas"></canvas>
+  <body class="flex justify-center items-center h-screen bg-[#d3d3d3] overflow-hidden">
+    <div class="loader"><img src="./image_processing20210903-1371-1fg4j0s.gif" alt="" /></div>
+    <div class="reset w-[30rem] h-[28rem] hidden bg-black absolute z-50"><img src="/image_processing20210903-1371-1fg4j0s.gif" alt="" /><button class="Restart absolute bottom-8 left-1/2 -translate-x-1/2 px-8 py-4 transition overflow-hidden hover:text-black bg-red-600 text-white">Restart</button></div>
+    <canvas class="canvas w-[30rem] h-[28rem] bg-black border-8 border-[#ddd] z-10"></canvas>
+    <!-- decos -->
+    <div class="borders w-[40rem] h-[33rem] rounded-lg absolute top-8 rounded-br-[120px] left-1/2 bg-[#7e7b7a] -translate-x-1/2"></div>
+    <div class="button before:content-['A'] right-16 top-36 b1"></div>
+    <div class="button before:content-['B'] right-48 top-56 b2"></div>
+    <div class="arrows"><span></span><span></span><span></span><span></span><span></span></div>
+    <ul class="holes absolute -bottom-14 right-20 rotate-[55deg]">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <span class="text-[#474bbe] text-2xl font-bold absolute bottom-2 m-0 left-1/2 -translate-x-1/2">GAME BOY</span>
     <script src="main.js"></script>
   </body>
 </html>

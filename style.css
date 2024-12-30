@@ -1,80 +1,151 @@
-*{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+body {
+  font-family: 'Press Start 2P', cursive;
 }
-body{
-    font-family: "Pixelify Sans", sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    padding-top: 15px;
-    text-align: center;
+
+.borders::before,
+.borders::after {
+  content: '';
+  height: 0.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 90%;
 }
-h1{
-    font-size: 45px;
-    letter-spacing: 5px;
-    margin: 0 0 15px;
+
+.borders::before {
+  background-color: #a5447b;
+  top: 2rem;
 }
-.canvas{
-    background-color: black;
+
+.borders::after {
+  background-color: #4c3a80;
+  top: 1rem;
 }
-.loader{
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    color: white;
-    position: absolute;
-    top:0;
-    left: 0;
+
+.button {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #9b1f57;
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.3), 0 2px 7px rgb(0 0 0 / 60%);
 }
-button{
-    background-color: #0f0;
-    color: white;
-    position: absolute;
-    left: 50%;
-    top: 250px;
-    transform: translate(-50%,-50%);
-    padding: 15px 30px;
-    font-size: 50px;
-    border: none;
-    cursor: pointer;
-    height: fit-content;
-    display: none;
+
+.button::before {
+  position: absolute;
+  bottom: -2rem;
+  right: 0;
+  transform: rotate(-36deg);
+  color: #474bbe;
 }
-button span{
-    background-color: black;
-    height: 20px;
-    width: 20px;
-    position: absolute;
+
+.holes li {
+  height: 1rem;
+  width: 10rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5), inset 0 3px 10px rgba(0, 0, 0, 0.5);
 }
-.s1{
-    bottom: -2px;
-    right: -2px;
+
+.holes li::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  height: 0.1875rem;
+  width: 70%;
 }
-.s2{
-    right: -2px;
-    top: -2px;
+.arrows {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
-.s3{
-    left: -2px;
-    bottom: -2px;
+.arrows > span {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  background-color: #2b2c2e;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.4);
 }
-.s4{
-    left: -2px;
-    top: -2px;
+.arrows span:nth-of-type(1) {
+  top: 250px;
+  left: 140px;
+  height: 70px;
+  width: 70px;
 }
-.loader{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
+.arrows span:nth-of-type(1)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2b2c2e;
+  height: 70%;
+  width: 70%;
+  border-radius: 50%;
 }
-.loader img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.arrows span:nth-of-type(2) {
+  top: 170px;
+  left: 140px;
+  height: 80px;
+  width: 70px;
+}
+.arrows span:nth-of-type(5) {
+  top: 320px;
+  left: 140px;
+  height: 80px;
+  width: 70px;
+}
+.arrows span:nth-of-type(3) {
+  top: 250px;
+  left: 60px;
+  height: 70px;
+  width: 80px;
+}
+.arrows span:nth-of-type(3)::before,
+.arrows span:nth-of-type(4)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+  background-color: #3a3b3f;
+  width: 15px;
+  height: 70%;
+  border-radius: 6px;
+}
+.arrows span:nth-of-type(3)::after,
+.arrows span:nth-of-type(4)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 66%;
+  transform: translate(-50%, -50%);
+  background-color: #3a3b3f;
+  width: 15px;
+  height: 70%;
+  border-radius: 6px;
+}
+.arrows span:nth-of-type(4) {
+  top: 250px;
+  left: 210px;
+  width: 80px;
+  height: 70px;
+}
+.Restart::before {
+  content: '';
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transition: 0.3s;
+  z-index: -1;
+}
+.Restart:hover::before {
+  bottom: 0;
 }
